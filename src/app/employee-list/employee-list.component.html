@@ -1,0 +1,31 @@
+<div class="page-main-container">
+    <div class="page-container">
+        <ul>
+            @for (employee of employeeList; track employee) {
+            <li (click)="showEmployeeDetails(employee)">{{employee.firstName}} {{employee.lastName}}</li>
+            }
+
+        </ul>
+    </div>
+
+
+    @if (showDetail) {
+    <div class="page-container">
+        <table>
+            <tr>
+                <td>Name: {{selectedEmployee?.firstName}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Surname: {{selectedEmployee?.lastName}}
+                </td>
+            </tr>
+            <tr>
+                <td>Address: {{selectedEmployee?.address?.street}} {{selectedEmployee?.address?.number}}, {{selectedEmployee?.address?.zip}} {{selectedEmployee?.address?.city}}, {{selectedEmployee?.address?.country}}</td>
+            </tr>
+
+        </table>
+    </div>
+
+    }
+</div>
