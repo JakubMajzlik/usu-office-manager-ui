@@ -1,0 +1,26 @@
+<div class="page-container">
+    <form>
+        <table>
+            <tr>
+                <td>Name: <input type="text" value="{{employee?.firstName}}"></td>
+            </tr>
+            <tr>
+                <td>
+                    Surname: <input type="text" value="{{employee?.lastName}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Street: <input type="text" value="{{employee?.address?.street}}" /></td>
+                <td>House number: <input type="text" value="{{employee?.address?.number}}" /></td>
+            </tr>
+            <tr>
+                <td>Zip: <input type="text" value="{{employee?.address?.zip}}" /></td>
+                <td>City: <input type="text" value="{{employee?.address?.city}}" /></td>
+            </tr>
+            <tr>
+                <td>Country: <input type="text" value="{{employee?.address?.country}}" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Save">
+    </form>
+</div>

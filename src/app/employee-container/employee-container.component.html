@@ -1,0 +1,21 @@
+<h1>Employees</h1>
+<div class="page-main-container">
+    <div class="page-container">
+        <button (click)="showCreateEmployeeForm()">+</button>
+        <app-employee-list (selectedEmployeeEvent)="showEmployeeDetails($event)"/>
+    </div>
+
+
+    @if (showDetail) {
+    <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()"/>
+    }
+
+    @if (showCreateForm) {
+    <app-employee-create-form/>
+    }
+
+
+    @if (showEditForm) {
+    <app-employee-update-form [employee]="selectedEmployee"/>
+    }
+</div>

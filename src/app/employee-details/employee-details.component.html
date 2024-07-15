@@ -1,0 +1,19 @@
+<div class="page-container">
+    <table>
+        <tr>
+            <td>Name: {{employee?.firstName}}</td>
+        </tr>
+        <tr>
+            <td>
+                Surname: {{employee?.lastName}}
+            </td>
+        </tr>
+        <tr>
+            <td>Address: {{employee?.address?.street}} {{employee?.address?.number}},
+                {{employee?.address?.zip}} {{employee?.address?.city}},
+                {{employee?.address?.country}}</td>
+        </tr>
+
+    </table>
+    <button (click)="updateEmployee()">Edit</button>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
 
 const mockedJson = `
@@ -36,17 +36,15 @@ const mockedJson = `
 })
 export class EmployeeListComponent {
 
+  active: boolean = true
+
   employeeList = JSON.parse(mockedJson) as EmployeeDetail[]
 
-  showDetail: boolean = false
+  @Output() selectedEmployeeEvent = new EventEmitter<EmployeeDetail>();
 
-  selectedEmployee: EmployeeDetail | null = null;
-
-  showEmployeeDetails(employee: EmployeeDetail) {
-    this.selectedEmployee = employee
-    this.showDetail = true
+  selectEmployee(employee: EmployeeDetail) {
+    this.selectedEmployeeEvent.emit(employee)
   }
-
 }
 
 
