@@ -1,5 +1,14 @@
-<app-navbar/>
-<app-employee-container/>
+<div class="page-main-container">
+    <app-navbar (changePage)="showPage($event)"/>
+    <app-title [title]="title"/>
+    @if (showEmployeesPage) {
+        <app-employee-container/>
+    }
+    @else if (showOfficesPage) {
+        <app-office-container/> 
+    }
+    
+</div>
 
 
 <router-outlet />

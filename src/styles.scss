@@ -1,18 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
     width: 100%;
-    margin: 0;
+    height: 100%;
+    margin: 0;  
+    
+}
+
+app-root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgb(199, 144, 77);
+ 
 }
 
 .page-main-container {
-    display: flex;
-    width: 100%;
-}
-.page-container {
-    flex: 50%;
+  
+    height: 100%;
 }
 
-.page-container li {
-    list-style: none;
-    margin-top: 10px;
+app-navbar {
+    height: 4%;
+}
+
+app-title {
+    height: 6%;
+}
+
+.page-sub-container {
+    flex: 1;
+    // background-color: rgb(255, 255, 0);
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+}
+
+.page-container {
+    padding: 15px;
+}
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.border-right {
+    border-right: 1px solid rgb(187, 187, 187);
 }

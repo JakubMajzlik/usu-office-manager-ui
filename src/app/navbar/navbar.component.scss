@@ -1,4 +1,4 @@
-.nav-button {
+li {
     list-style-type: none;
     display: inline;
     padding: 8px;
@@ -7,19 +7,19 @@
 
 .nav-button:hover {
     background-color: #a5a5a5;
+    cursor: pointer;
 }
 
 ul {
     display: block;
-    background-color: #dddddd;
     align-content: center;
     padding: 8px 0;
     margin: 0;
 
 }
 
-app-navbar {
-    height: 100px;
+nav {
+    background-color: #dddddd;
 }
 
 app-navbar::after {

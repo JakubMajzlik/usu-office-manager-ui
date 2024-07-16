@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import axios from 'axios';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-create-form',
@@ -9,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class EmployeeCreateFormComponent {
 
+  constructor(private employeeService: EmployeeService) {}
+
+  createEmployee(){
+    // this.employeeService.createNewEmployee()
+  }
+  
 }

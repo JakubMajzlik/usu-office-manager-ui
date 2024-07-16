@@ -1,7 +1,12 @@
 <nav>
     <ul>
-        <li class="nav-button" routerLink="/employees">Employees</li>
-        <li class="nav-button">Office tables</li>
-        <li class="nav-button">Offices</li>
+        <li class="nav-button" (click)="redirect('employees')" routerLink="/employees">Employees</li>
+        <li class="nav-button" (click)="redirect('offices')">Offices</li>
+        <li >
+            <select>
+                <option value="en">EN</option>
+                <option value="cs">CS</option>
+              </select>
+        </li>
     </ul>
 </nav>

@@ -1,11 +1,12 @@
 <div class="page-sub-container">
     <div class="left-container  border-right">
-        <button class="new-employee-button" (click)="showCreateEmployeeForm()">+</button>
-        <app-employee-list (selectedEmployeeEvent)="showEmployeeDetails($event)"/>
+        <h1> TEst</h1>
+        <!-- <button (click)="showCreateEmployeeForm()">+</button> -->
+        <!-- <app-employee-list (selectedEmployeeEvent)="showEmployeeDetails($event)"/> -->
     </div>
 
     <div class="right-container">
-    @if (showDetail) {
+    <!-- @if (showDetail) {
     <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()"/>
     }
 
@@ -15,7 +16,7 @@
 
 
     @if (showEditForm) {
-    <app-employee-update-form [employee]="selectedEmployee" />
-    }
+    <app-employee-update-form [employee]="selectedEmployee"/>
+    } -->
     </div>
 </div>

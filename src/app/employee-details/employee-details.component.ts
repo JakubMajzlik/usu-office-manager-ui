@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -9,6 +10,9 @@ import { EmployeeDetail } from '../../model/EmployeeDetail';
   styleUrl: './employee-details.component.scss'
 })
 export class EmployeeDetailsComponent {
+
+  constructor(private employeeService: EmployeeService) {}
+
   
   @Input() employee: EmployeeDetail | null = null;
 
@@ -21,6 +25,12 @@ export class EmployeeDetailsComponent {
   updateEmployee() {
     if (this.employee != null) {
       this.updateEmployeeEvent.emit(this.employee)
+    }
+  }
+
+  deleteEmployee() {
+    if (this.employee != null) {
+      this.employeeService.deleteEmployee(this.employee)
     }
   }
 }
