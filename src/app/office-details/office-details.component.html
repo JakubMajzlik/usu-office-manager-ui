@@ -1,1 +1,19 @@
-<p>office-details works!</p>
+<div class="page-container">
+    <h2>Employee detail</h2>
+    <button (click)="deleteOffice()">Delete</button>
+    <table>
+        <tr>
+            <td>Name: {{office?.name}}</td>
+        </tr>
+        <tr>
+            <td>
+                Area: {{office?.area}}
+            </td>
+        </tr>
+        <tr>
+            <td>Capacity: {{office?.capacity}}</td>
+        </tr>
+
+    </table>
+    <button (click)="updateOffice()">Edit</button>
+</div>

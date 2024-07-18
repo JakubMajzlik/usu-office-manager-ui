@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { OfficeDetail } from '../../model/OfficeDetail';
 
 @Component({
   selector: 'app-office-update-form',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './office-update-form.component.scss'
 })
 export class OfficeUpdateFormComponent {
+
+  @Input() office: OfficeDetail | null = null
 
 }

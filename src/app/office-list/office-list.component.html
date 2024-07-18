@@ -1,1 +1,8 @@
-<p>office-list works!</p>
+<div class="page-container">
+    <ul class="entity-list">
+        @for (office of getOffices(); track office) {
+        <li (click)="selectOffice(office)">{{office.name}} </li>
+        }
+
+    </ul>
+</div>

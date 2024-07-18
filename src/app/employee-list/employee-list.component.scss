@@ -1,21 +1,2 @@
 
-li {
-    list-style: none;
-    font-size: 18pt;
-    font-weight: 600;
-    padding: 15px 5px;
-    width: 80%;
-    border-bottom: 1px solid gray;
-    cursor: pointer;
-}
-li:last-child {
-    border-bottom: none;
-}
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-.page-sub-container-item {
-    flex-grow: 1;
-}

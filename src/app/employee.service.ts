@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EmployeeDetail } from '../model/EmployeeDetail';
 import axios from 'axios';
-const API_URL = "http://localhost:8080/api";
-
+import { API_URL } from './api';
 
 const mockedJson = `
 [
@@ -59,12 +58,14 @@ const mockedJson = `
 })
 export class EmployeeService {
 
-  employeeList: EmployeeDetail[] = JSON.parse(mockedJson) as EmployeeDetail[]
-
   constructor() { }
 
   getEmployees() {
-    return this.employeeList
+  let employees: EmployeeDetail[] = []
+    axios.get(`${API_URL}/employee`).then((response) => {
+      employees = JSON.parse(response.data) as EmployeeDetail[]
+    })
+    return employees
   }
 
   createNewEmployee(newEmployee: EmployeeDetail) {

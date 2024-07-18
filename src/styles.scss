@@ -27,6 +27,24 @@ app-title {
     height: 6%;
 }
 
+.entity-list li {
+    list-style: none;
+    font-size: 18pt;
+    font-weight: 600;
+    padding: 15px 5px;
+    width: 80%;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+.entity-list li:last-child {
+    border-bottom: none;
+}
+
+.entity-list {
+    margin: 0;
+    padding: 0;
+}
+
 .page-sub-container {
     flex: 1;
     // background-color: rgb(255, 255, 0);
@@ -47,4 +65,12 @@ app-title {
 
 .border-right {
     border-right: 1px solid rgb(187, 187, 187);
+}
+
+.left-container {
+    flex-grow: 1;
+}
+
+.right-container {
+    flex-grow: 8;
 }
