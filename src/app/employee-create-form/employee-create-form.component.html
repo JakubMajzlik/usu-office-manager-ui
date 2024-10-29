@@ -1,26 +1,28 @@
 <div class="page-container">
-    <form>
-        <table>
-            <tr>
-                <td>Name: <input type="text" /></td>
-            </tr>
-            <tr>
-                <td>
-                    Surname: <input type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>Street: <input type="text" /></td>
-                <td>House number: <input type="text" /></td>
-            </tr>
-            <tr>
-                <td>Zip: <input type="text" /></td>
-                <td>City: <input type="text" /></td>
-            </tr>
-            <tr>
-                <td>Country: <input type="text" /></td>
-            </tr>
-        </table>
-        <input type="submit" value="Create">
-    </form>
+    <table>
+        <tr>
+            <td>{{'GENERAL.FIRST_NAME' | translate}}: <input type="text" minlength="1" [(ngModel)]="newEmployeeForm.firstName"/></td>
+        </tr>
+        <tr>
+            <td>
+                {{'GENERAL.SURNAME' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.lastName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>{{'GENERAL.ADDRESS_FIELD.STREET' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.street"/></td>
+            <td>{{'GENERAL.ADDRESS_FIELD.HOUSE_NUMBER' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.number"/></td>
+        </tr>
+        <tr>
+            <td>{{'GENERAL.ADDRESS_FIELD.ZIP' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.zip"/></td>
+            <td>{{'GENERAL.ADDRESS_FIELD.CITY' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.city"/></td>
+        </tr>
+        <tr>
+            <td>{{'GENERAL.ADDRESS_FIELD.COUNTRY' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.country"/></td>
+        </tr>
+    </table>
+    <button (click)="createNewEmployee()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>
+    <br>
+    @if (showError) {
+        <span>{{errorMessage}}</span>
+    }
 </div>

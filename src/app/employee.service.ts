@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EmployeeDetail } from '../model/EmployeeDetail';
+import { EmployeeDetail, EmployeeDetailTemp } from '../model/EmployeeDetail';
 import axios from 'axios';
 import { API_URL } from './api';
 
@@ -62,26 +62,28 @@ export class EmployeeService {
 
   getEmployees() {
   let employees: EmployeeDetail[] = []
-    axios.get(`${API_URL}/employee`).then((response) => {
+    axios.get(`${API_URL}/employees`).then((response) => {
       employees = JSON.parse(response.data) as EmployeeDetail[]
     })
     return employees
   }
 
   createNewEmployee(newEmployee: EmployeeDetail) {
-    axios.post(`${API_URL}/employee`, newEmployee)
-  }
-  refreshEmployeeList() {
-    axios.get(`${API_URL}/employee`).then((response) => {
-      this.employeeList = JSON.parse(response.data) as EmployeeDetail[]
-    })
+    let temp: EmployeeDetailTemp = {
+      id: 0, 
+      firstName: newEmployee.firstName,
+      lastName: newEmployee.lastName,
+      startDate: newEmployee.startDate,
+      address: newEmployee.address.city,
+    }
+    axios.post(`${API_URL}/employees`, temp)
   }
 
   updateEmployee(updatedEmployee: EmployeeDetail) {
-    axios.put(`${API_URL}/employee/${updatedEmployee.id}`, updatedEmployee)
+    axios.put(`${API_URL}/employees/${updatedEmployee.id}`, updatedEmployee)
   }
 
   deleteEmployee(employee: EmployeeDetail) {
-    axios.delete(`${API_URL}/employee,${employee.id}`)
+    axios.delete(`${API_URL}/employees,${employee.id}`)
   }
 }

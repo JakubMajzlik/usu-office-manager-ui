@@ -1,11 +1,11 @@
 <nav>
     <ul>
-        <li class="nav-button" (click)="redirect('employees')" routerLink="/employees">Employees</li>
-        <li class="nav-button" (click)="redirect('offices')">Offices</li>
+        <li class="nav-button" (click)="redirect('employees')" routerLink="/employees">{{'GENERAL.NAVIGATION.EMPLOYEES_BUTTON' | translate}}</li>
+        <li class="nav-button" (click)="redirect('offices')">{{'GENERAL.NAVIGATION.OFFICES_BUTTON' | translate}}s</li>
         <li >
-            <select>
+            <select (change)="changeLanguage($event)">
                 <option value="en">EN</option>
-                <option value="cs">CS</option>
+                <option value="de">DE</option>
               </select>
         </li>
     </ul>

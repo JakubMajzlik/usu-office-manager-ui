@@ -1,0 +1,26 @@
+{
+    "GENERAL": {
+        "NAVIGATION": {
+            "EMPLOYEES_BUTTON": "Employees",
+            "OFFICES_BUTTON": "Offices"
+        },
+        "BUTTON": {
+            "EDIT": "Edit",
+            "DELETE": "Delete",
+            "CREATE": "Create",
+            "UPDATE": "Update"
+        },
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "ADDRESS": "Address",
+        "ADDRESS_FIELD": {
+            "STREET": "Street",
+            "HOUSE_NUMBER": "House number",
+            "ZIP": "Zip",
+            "CITY": "City",
+            "COUNTRY": "Country"
+        },
+        "AREA": "Area",
+        "CAPACITY": "Capacity"
+    }
+}

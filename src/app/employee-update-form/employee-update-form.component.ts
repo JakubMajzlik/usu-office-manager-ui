@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
 import { EmployeeService } from '../employee.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-employee-update-form',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './employee-update-form.component.html',
   styleUrl: './employee-update-form.component.scss'
 })

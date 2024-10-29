@@ -1,19 +1,19 @@
 <div class="page-container">
     <h2>Employee detail</h2>
-    <button (click)="deleteOffice()">Delete</button>
+    <button (click)="deleteOffice()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
-            <td>Name: {{office?.name}}</td>
+            <td>{{'GENERAL.NAME' | translate}}: {{office?.name}}</td>
         </tr>
         <tr>
             <td>
-                Area: {{office?.area}}
+                {{'GENERAL.AREA' | translate}}: {{office?.area}}
             </td>
         </tr>
         <tr>
-            <td>Capacity: {{office?.capacity}}</td>
+            <td>{{'GENERAL.CAPACITY' | translate}}: {{office?.capacity}}</td>
         </tr>
 
     </table>
-    <button (click)="updateOffice()">Edit</button>
+    <button (click)="updateOffice()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
 </div>

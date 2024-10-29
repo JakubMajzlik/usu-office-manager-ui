@@ -1,21 +1,21 @@
 <div class="page-container">
     <h2>Employee detail</h2>
-    <button (click)="deleteEmployee()">Delete</button>
+    <button (click)="deleteEmployee()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
-            <td>Name: {{employee?.firstName}}</td>
+            <td>{{'GENERAL.FIRST_NAME' | translate}}: {{employee?.firstName}}</td>
         </tr>
         <tr>
             <td>
-                Surname: {{employee?.lastName}}
+                {{'GENERAL.SURNAME' | translate}}: {{employee?.lastName}}
             </td>
         </tr>
         <tr>
-            <td>Address: {{employee?.address?.street}} {{employee?.address?.number}},
+            <td>{{'GENERAL.ADDRESS' | translate}}: {{employee?.address?.street}} {{employee?.address?.number}},
                 {{employee?.address?.zip}} {{employee?.address?.city}},
                 {{employee?.address?.country}}</td>
         </tr>
 
     </table>
-    <button (click)="updateEmployee()">Edit</button>
+    <button (click)="updateEmployee()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
 </div>

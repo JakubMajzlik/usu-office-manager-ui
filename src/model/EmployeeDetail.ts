@@ -3,10 +3,18 @@ export interface EmployeeDetail {
     firstName: string;
     lastName: string;
     address: EmployeeAddress;
+    startDate: Date
+  }
+export interface EmployeeDetailTemp {
+    id: number;
+    firstName: string;
+    lastName: string;
+    address: String;
+    startDate: Date
   }
 
 export interface EmployeeAddress {
-    number: Number;
+    number: number;
     street: string;
     city: string;
     zip: string;

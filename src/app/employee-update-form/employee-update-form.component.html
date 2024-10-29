@@ -2,25 +2,25 @@
     <form>
         <table>
             <tr>
-                <td>Name: <input type="text" value="{{employee?.firstName}}"></td>
+                <td>{{'GENERAL.FIRST_NAME' | translate}}: <input type="text" value="{{employee?.firstName}}"></td>
             </tr>
             <tr>
                 <td>
-                    Surname: <input type="text" value="{{employee?.lastName}}" />
+                    {{'GENERAL.LAST_NAME' | translate}}: <input type="text" value="{{employee?.lastName}}" />
                 </td>
             </tr>
             <tr>
-                <td>Street: <input type="text" value="{{employee?.address?.street}}" /></td>
-                <td>House number: <input type="text" value="{{employee?.address?.number}}" /></td>
+                <td>{{'GENERAL.ADDRESS_FIELD.STREET' | translate}}: <input type="text" value="{{employee?.address?.street}}" /></td>
+                <td>{{'GENERAL.ADDRESS_FIELD.HOUSE_NUMBER' | translate}}: <input type="text" value="{{employee?.address?.number}}" /></td>
             </tr>
             <tr>
-                <td>Zip: <input type="text" value="{{employee?.address?.zip}}" /></td>
-                <td>City: <input type="text" value="{{employee?.address?.city}}" /></td>
+                <td>{{'GENERAL.ADDRESS_FIELD.ZIP' | translate}}: <input type="text" value="{{employee?.address?.zip}}" /></td>
+                <td>{{'GENERAL.ADDRESS_FIELD.CITY' | translate}}: <input type="text" value="{{employee?.address?.city}}" /></td>
             </tr>
             <tr>
-                <td>Country: <input type="text" value="{{employee?.address?.country}}" /></td>
+                <td>{{'GENERAL.ADDRESS_FIELD.COUNTRY' | translate}}: <input type="text" value="{{employee?.address?.country}}" /></td>
             </tr>
         </table>
-        <input type="submit" value="Save">
+        <input type="submit" value="{{'GENERAL.BUTTON.UPDATE' | translate}}">
     </form>
 </div>

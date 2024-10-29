@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OfficeDetail } from '../../model/OfficeDetail';
 import { OfficeService } from '../office.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-office-details',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './office-details.component.html',
   styleUrl: './office-details.component.scss'
 })
