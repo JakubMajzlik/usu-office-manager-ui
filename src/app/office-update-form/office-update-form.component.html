@@ -2,18 +2,18 @@
     <form>
         <table>
             <tr>
-                <td>Name: <input type="text" value="{{office?.name}}"></td>
+                <td>{{'GENERAL.NAME' | translate}}: <input type="text" value="{{office?.name}}"></td>
             </tr>
             <tr>
                 <td>
-                    Area: <input type="text" value="{{office?.area}}" />
+                    {{'GENERAL.AREA' | translate}}: <input type="text" value="{{office?.area}}" />
                 </td>
             </tr>
             <tr>
-                <td>Capacity: <input type="text" value="{{office?.capacity}}" /></td>
+                <td>{{'GENERAL.CAPACITY' | translate}}: <input type="text" value="{{office?.capacity}}" /></td>
             </tr>
             <tr>
-                <td>TODO Office table</td>
+                <app-office-table-table [office]="office"/>
             </tr>
         </table>
         <input type="submit" value="Save">

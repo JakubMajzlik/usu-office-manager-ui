@@ -10,6 +10,7 @@
             "CREATE": "Create",
             "UPDATE": "Update"
         },
+        "FIRST_NAME": "Name",
         "NAME": "Name",
         "SURNAME": "Surname",
         "ADDRESS": "Address",
@@ -20,6 +21,7 @@
             "CITY": "City",
             "COUNTRY": "Country"
         },
+        "UTILIZED_AREA": "Utilized area",
         "AREA": "Area",
         "CAPACITY": "Capacity"
     }
