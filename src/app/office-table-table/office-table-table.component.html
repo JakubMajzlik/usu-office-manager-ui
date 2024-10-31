@@ -6,7 +6,10 @@
     <tbody>
         @for (officeTable of getTablesForOffice(); track officeTable) {
             <tr>
-                <td></td>
+                <td>{{officeTable.name}}</td>
+            </tr>
+            <tr>
+                <td>{{officeTable.utilizedArea}}</td>
             </tr>
             }
     </tbody>

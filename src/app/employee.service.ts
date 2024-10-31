@@ -69,14 +69,7 @@ export class EmployeeService {
   }
 
   createNewEmployee(newEmployee: EmployeeDetail) {
-    let temp: EmployeeDetailTemp = {
-      id: 0, 
-      firstName: newEmployee.firstName,
-      lastName: newEmployee.lastName,
-      startDate: newEmployee.startDate,
-      address: newEmployee.address.city,
-    }
-    axios.post(`${API_URL}/employees`, temp)
+    axios.post(`${API_URL}/employees`, newEmployee)
   }
 
   updateEmployee(updatedEmployee: EmployeeDetail) {

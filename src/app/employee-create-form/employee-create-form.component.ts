@@ -31,8 +31,7 @@ export class EmployeeCreateFormComponent {
   }
 
   constructor(
-    private employeeService: EmployeeService, 
-    private formBuilder: FormBuilder,
+    private employeeService: EmployeeService
   ) { }
 
   createNewEmployee(){
@@ -43,7 +42,7 @@ export class EmployeeCreateFormComponent {
       return
     }
 
-    if (isNaN(Number(this.newEmployeeForm.zip.trim))) {
+    if (isNaN(Number(this.newEmployeeForm.zip.replaceAll(" ", "")))) {
       this.errorMessage = "Zip have to be a number"
       this.showError = true
       return

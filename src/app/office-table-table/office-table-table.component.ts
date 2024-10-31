@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { OfficeDetail } from '../../model/OfficeDetail';
+import { OfficeTableDetail } from '../../model/OfficeTableDetail';
 
 @Component({
   selector: 'app-office-table-table',
@@ -14,8 +15,14 @@ export class OfficeTableTableComponent {
 
   @Input() office: OfficeDetail | null = null
 
-  getTablesForOffice() {
-      return []
+  getTablesForOffice(): OfficeTableDetail[] {
+    console.log("aa")
+      return [
+        {
+          name: "Table A",
+          utilizedArea: 5
+        }
+      ]
   }
 
 }

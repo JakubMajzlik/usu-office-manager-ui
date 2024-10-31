@@ -3,7 +3,6 @@ export interface EmployeeDetail {
     firstName: string;
     lastName: string;
     address: EmployeeAddress;
-    startDate: Date
   }
 export interface EmployeeDetailTemp {
     id: number;
@@ -14,7 +13,7 @@ export interface EmployeeDetailTemp {
   }
 
 export interface EmployeeAddress {
-    number: number;
+    number: string;
     street: string;
     city: string;
     zip: string;

@@ -24,8 +24,22 @@ export class EmployeeListComponent {
     this.selectedEmployeeEvent.emit(employee)
   }
 
-  getEmployees() {
-    return this.employeeService.getEmployees()
+  getEmployees(): EmployeeDetail[] {
+    // return this.employeeService.getEmployees()
+    return [
+      {
+        id: 0,
+        firstName: "Jakub",
+        lastName: "Majzlik",
+        address: {
+          street: "abc",
+          number: "123",
+          zip: "612 00",
+          city: "Brno",
+          country: "Czech republic"
+        }
+      }
+    ]
   }
   
 }
