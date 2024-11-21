@@ -12,9 +12,11 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class EmployeeDetailsComponent {
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService) { }
 
-  
+  @Input() allEmployees: EmployeeDetail[] = []
+
+
   @Input() employee: EmployeeDetail | null = null;
 
   @Output() updateEmployeeEvent = new EventEmitter<EmployeeDetail>()
@@ -31,7 +33,10 @@ export class EmployeeDetailsComponent {
 
   deleteEmployee() {
     if (this.employee != null) {
-      this.employeeService.deleteEmployee(this.employee)
+      this.employeeService.deleteEmployee(this.employee).then((_) => {
+        const index = this.allEmployees.indexOf(this.employee!)
+        this.allEmployees.splice(index, 1)
+      })
     }
   }
 }

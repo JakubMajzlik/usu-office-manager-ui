@@ -1,16 +1,17 @@
+<h1>{{'GENERAL.EMPLOYEES' | translate}}</h1>
 <div class="page-sub-container">
     <div class="left-container  border-right">
         <button class="new-employee-button" (click)="showCreateEmployeeForm()">+</button>
-        <app-employee-list (selectedEmployeeEvent)="showEmployeeDetails($event)"/>
+        <app-employee-list (selectedEmployeeEvent)="showEmployeeDetails($event)" [employees]="employees"/>
     </div>
 
     <div class="right-container">
     @if (showDetail) {
-    <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()"/>
+    <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()" [allEmployees]="employees"/>
     }
 
     @if (showCreateForm) {
-    <app-employee-create-form/>
+    <app-employee-create-form [allEmployees]="employees" />
     }
 
 

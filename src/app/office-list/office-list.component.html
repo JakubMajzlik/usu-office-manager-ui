@@ -1,6 +1,6 @@
 <div class="page-container">
     <ul class="entity-list">
-        @for (office of getOffices(); track office) {
+        @for (office of offices; track office) {
         <li (click)="selectOffice(office)">{{office.name}} </li>
         }
 

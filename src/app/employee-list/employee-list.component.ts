@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
 import axios from 'axios';
 import { EmployeeService } from '../employee.service';
@@ -14,35 +14,13 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeListComponent {
   
   constructor(private employeeService: EmployeeService) {}
-
-  active: boolean = true
   
+  @Input() employees: EmployeeDetail[] = []
 
   @Output() selectedEmployeeEvent = new EventEmitter<EmployeeDetail>();
 
   selectEmployee(employee: EmployeeDetail) {
     this.selectedEmployeeEvent.emit(employee)
   }
-
-  getEmployees(): EmployeeDetail[] {
-    // return this.employeeService.getEmployees()
-    return [
-      {
-        id: 0,
-        firstName: "Jakub",
-        lastName: "Majzlik",
-        address: {
-          street: "abc",
-          number: "123",
-          zip: "612 00",
-          city: "Brno",
-          country: "Czech republic"
-        }
-      }
-    ]
-  }
-  
 }
-
-
 

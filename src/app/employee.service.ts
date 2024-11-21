@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EmployeeDetail, EmployeeDetailTemp } from '../model/EmployeeDetail';
+import { EmployeeDetail } from '../model/EmployeeDetail';
 import axios from 'axios';
 import { API_URL } from './api';
 
@@ -51,8 +51,6 @@ const mockedJson = `
   }
 ]`;
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -61,15 +59,12 @@ export class EmployeeService {
   constructor() { }
 
   getEmployees() {
-  let employees: EmployeeDetail[] = []
-    axios.get(`${API_URL}/employees`).then((response) => {
-      employees = JSON.parse(response.data) as EmployeeDetail[]
-    })
-    return employees
+    return axios.get(`${API_URL}/employees/`)
+
   }
 
   createNewEmployee(newEmployee: EmployeeDetail) {
-    axios.post(`${API_URL}/employees`, newEmployee)
+    return axios.post(`${API_URL}/employees`, newEmployee)
   }
 
   updateEmployee(updatedEmployee: EmployeeDetail) {
@@ -77,6 +72,6 @@ export class EmployeeService {
   }
 
   deleteEmployee(employee: EmployeeDetail) {
-    axios.delete(`${API_URL}/employees,${employee.id}`)
+    return axios.delete(`${API_URL}/employees/${employee.id}`)
   }
 }

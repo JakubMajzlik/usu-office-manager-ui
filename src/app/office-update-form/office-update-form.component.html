@@ -1,21 +1,17 @@
 <div class="page-container">
-    <form>
+    <h2>Update of office</h2>
         <table>
             <tr>
-                <td>{{'GENERAL.NAME' | translate}}: <input type="text" [ngModel]="office?.name"></td>
+                <td>{{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="office!.name"></td>
             </tr>
             <tr>
                 <td>
-                    {{'GENERAL.AREA' | translate}}: <input type="text" [ngModel]="office?.area" />
+                    {{'GENERAL.AREA' | translate}}: <input type="text" [(ngModel)]="office!.area" />
                 </td>
             </tr>
             <tr>
-                <td>{{'GENERAL.CAPACITY' | translate}}: <input type="text" [ngModel]="office?.capacity" /></td>
-            </tr>
-            <tr>
-                <app-office-table-table [office]="office"/>
+                <app-office-table-table [office]="office" [readOnly]="false"/>
             </tr>
         </table>
         <button (click)="updateOffice()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
-    </form>
 </div>

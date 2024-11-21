@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import axios from 'axios';
 import { EmployeeService } from '../employee.service';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
@@ -14,7 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class EmployeeCreateFormComponent {
 
-  
+  @Input() allEmployees: EmployeeDetail[] = []
+
   showError: boolean = false
 
   errorMessage: String = ""
@@ -23,10 +24,7 @@ export class EmployeeCreateFormComponent {
     firstName: '',
     lastName: '',
     number: '',
-    street: '',
-    city: '',
-    zip: '',
-    country: '',
+    address: '',
     startDate: Date
   }
 
@@ -35,19 +33,18 @@ export class EmployeeCreateFormComponent {
   ) { }
 
   createNewEmployee(){
-    console.log("test")
-    if (isNaN(Number(this.newEmployeeForm.number))) {
-      this.errorMessage = "House number have to be a number"
-      this.showError = true
-      return
-    }
+    const employee: EmployeeDetail = {
+      id: 0,
+      firstName: this.newEmployeeForm.firstName,
+      lastName: this.newEmployeeForm.lastName,
+      address: this.newEmployeeForm.address,
+      startDate: this.newEmployeeForm.startDate.toString()
+    };
+    this.employeeService.createNewEmployee(employee).then((_) => {
+       this.allEmployees.push(employee)
+    })
 
-    if (isNaN(Number(this.newEmployeeForm.zip.replaceAll(" ", "")))) {
-      this.errorMessage = "Zip have to be a number"
-      this.showError = true
-      return
-    }
-    // this.employeeService.createNewEmployee()
+   
   }
   
 }

@@ -15,14 +15,19 @@ export class OfficeTableTableComponent {
 
   @Input() office: OfficeDetail | null = null
 
+  @Input() readOnly: Boolean = true
+
   getTablesForOffice(): OfficeTableDetail[] {
-    console.log("aa")
       return [
-        {
-          name: "Table A",
-          utilizedArea: 5
-        }
       ]
+  }
+
+  editTable(officeTable: OfficeTableDetail) {
+
+  }
+
+  deleteTable(officeTable: OfficeTableDetail) {
+
   }
 
 }

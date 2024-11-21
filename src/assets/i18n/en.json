@@ -12,7 +12,7 @@
         },
         "FIRST_NAME": "Name",
         "NAME": "Name",
-        "SURNAME": "Surname",
+        "LAST_NAME": "Surname",
         "ADDRESS": "Address",
         "ADDRESS_FIELD": {
             "STREET": "Street",
@@ -23,6 +23,9 @@
         },
         "UTILIZED_AREA": "Utilized area",
         "AREA": "Area",
-        "CAPACITY": "Capacity"
+        "CAPACITY": "Capacity",
+        "START_DATE": "Start date",
+        "EMPLOYEES": "Employees",
+        "OFFICES": "Offices"
     }
 }

@@ -1,5 +1,5 @@
 <div class="page-container">
-    <h2>Employee detail</h2>
+    <h2>Office details</h2>
     <button (click)="deleteOffice()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
@@ -10,10 +10,8 @@
                 {{'GENERAL.AREA' | translate}}: {{office?.area}}
             </td>
         </tr>
-        <tr>
-            <td>{{'GENERAL.CAPACITY' | translate}}: {{office?.capacity}}</td>
-        </tr>
 
     </table>
+    <app-office-table-table [office]="office" [readOnly]="true"/>
     <button (click)="updateOffice()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
 </div>

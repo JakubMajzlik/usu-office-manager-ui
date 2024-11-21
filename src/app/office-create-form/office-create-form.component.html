@@ -1,21 +1,15 @@
 <div class="page-container">
-    <form>
+    <h2>Create a new office</h2>
         <table>
             <tr>
-                <td>{{'GENERAL.NAME' | translate}}: <input type="text"></td>
+                <td>{{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="office.name"></td>
             </tr>
             <tr>
                 <td>
-                    {{'GENERAL.AREA' | translate}}: <input type="text"/>
+                    {{'GENERAL.AREA' | translate}}: <input type="text" [(ngModel)]="office.area"/>
                 </td>
             </tr>
-            <tr>
-                <td>{{'GENERAL.CAPACITY' | translate}}: <input type="text"></td>
-            </tr>
-            <tr>
-                <td>TODO Office table</td>
-            </tr>
         </table>
-        <input type="submit" value="{{'GENERAL.BUTTON.CREATE' | translate}}">
-    </form>
+        <app-office-table-table [office]="office" [readOnly]="false"/>
+        <button  (click)="createOffice()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>
 </div>

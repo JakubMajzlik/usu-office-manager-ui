@@ -2,7 +2,6 @@ export interface OfficeDetail {
     id: number;
     name: string;
     area: number;
-    capacity: number;
     tables: OfficeTable[];
 }
 

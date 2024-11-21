@@ -1,12 +1,13 @@
+<h1>{{'GENERAL.OFFICES' | translate}}</h1>
 <div class="page-sub-container">
     <div class="left-container  border-right">
         <button class="new-office-button" (click)="showCreateOfficeForm()">+</button>
-        <app-office-list (selectedOfficeEvent)="showOfficeDetails($event)"/>
+        <app-office-list (selectedOfficeEvent)="showOfficeDetails($event)" [offices]="offices"/>
     </div>
 
     <div class="right-container">
      @if (showDetail) {
-    <app-office-details [office]="selectedOffice" (updateOfficeEvent)="showUpdateOfficeForm()"/>
+    <app-office-details [office]="selectedOffice" (updateOfficeEvent)="showUpdateOfficeForm()" [offices]="offices"/>
     } 
 
     @if (showCreateForm) {

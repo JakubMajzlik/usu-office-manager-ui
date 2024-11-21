@@ -8,7 +8,7 @@ import { OfficeService } from '../office.service';
 @Component({
   selector: 'app-office-update-form',
   standalone: true,
-  imports: [TranslateModule, FormsModule, OfficeUpdateFormComponent, OfficeTableTableComponent],
+  imports: [TranslateModule, FormsModule, OfficeTableTableComponent],
   templateUrl: './office-update-form.component.html',
   styleUrl: './office-update-form.component.scss'
 })

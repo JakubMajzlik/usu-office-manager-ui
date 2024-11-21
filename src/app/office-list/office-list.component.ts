@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import axios from 'axios';
 import { API_URL } from '../api';
 import { OfficeDetail } from '../../model/OfficeDetail';
@@ -15,13 +15,11 @@ export class OfficeListComponent {
 
   constructor(private officeService: OfficeService) {}
 
+  @Input() offices: OfficeDetail[] = []
+
   @Output() selectedOfficeEvent = new EventEmitter<OfficeDetail>();
 
   selectOffice(office: OfficeDetail) {
     this.selectedOfficeEvent.emit(office)
-  }
-
-  getOffices() {
-    return this.officeService.getAllOffices()
   }
 }

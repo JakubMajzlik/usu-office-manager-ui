@@ -1,11 +1,10 @@
 <div class="page-main-container">
     <app-navbar (changePage)="showPage($event)"/>
-    <app-title [title]="title"/>
     @if (showEmployeesPage) {
-        <app-employee-container/>
+        <app-employee-container [employees]="employees"/>
     }
     @else if (showOfficesPage) {
-        <app-office-container/> 
+        <app-office-container [offices]="offices"/> 
     }
     
 </div>

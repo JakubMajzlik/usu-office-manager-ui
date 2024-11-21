@@ -17,35 +17,6 @@ export class EmployeeUpdateFormComponent {
 
   constructor(private employeeService: EmployeeService) { }
 
-  updatedEmployee = {
-    id: 0,
-    firstName: '',
-    lastName: '',
-    address: {
-      number: '',
-      street: '',
-      city: '',
-      zip: '',
-      country: ''
-    }
-  }
-
-  setEmployeeData(employee: EmployeeDetail): EmployeeDetail {
-    return this.updatedEmployee = {
-      id: employee.id,
-      firstName: employee.firstName,
-      lastName: employee.lastName,
-      address: {
-        number: employee.address.number,
-        street: employee.address.street,
-        city: employee.address.city,
-        zip: employee.address.zip,
-        country: employee.address.country,
-      }
-
-    };
-  }
-
   updateEmployee() {
     if (this.employee != null) {
       this.employeeService.updateEmployee(this.employee)

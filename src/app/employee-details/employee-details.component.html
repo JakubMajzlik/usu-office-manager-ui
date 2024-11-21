@@ -1,5 +1,5 @@
 <div class="page-container">
-    <h2>Employee detail</h2>
+    <h2>Employee details</h2>
     <button (click)="deleteEmployee()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
@@ -7,13 +7,14 @@
         </tr>
         <tr>
             <td>
-                {{'GENERAL.SURNAME' | translate}}: {{employee?.lastName}}
+                {{'GENERAL.LAST_NAME' | translate}}: {{employee?.lastName}}
             </td>
         </tr>
         <tr>
-            <td>{{'GENERAL.ADDRESS' | translate}}: {{employee?.address?.street}} {{employee?.address?.number}},
-                {{employee?.address?.zip}} {{employee?.address?.city}},
-                {{employee?.address?.country}}</td>
+            <td>{{'GENERAL.ADDRESS' | translate}}: {{employee?.address}}</td>
+        </tr>
+        <tr>
+            <td>{{'GENERAL.START_DATE' | translate}}: {{employee?.startDate}}</td>
         </tr>
 
     </table>

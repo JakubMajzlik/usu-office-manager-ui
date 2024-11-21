@@ -1,23 +1,19 @@
 <div class="page-container">
+    <h2>Create a new employee</h2>
     <table>
         <tr>
             <td>{{'GENERAL.FIRST_NAME' | translate}}: <input type="text" minlength="1" [(ngModel)]="newEmployeeForm.firstName"/></td>
         </tr>
         <tr>
             <td>
-                {{'GENERAL.SURNAME' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.lastName"/>
+                {{'GENERAL.LAST_NAME' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.lastName"/>
             </td>
         </tr>
         <tr>
-            <td>{{'GENERAL.ADDRESS_FIELD.STREET' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.street"/></td>
-            <td>{{'GENERAL.ADDRESS_FIELD.HOUSE_NUMBER' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.number"/></td>
+            <td>{{'GENERAL.ADDRESS' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.address"/></td>
         </tr>
         <tr>
-            <td>{{'GENERAL.ADDRESS_FIELD.ZIP' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.zip"/></td>
-            <td>{{'GENERAL.ADDRESS_FIELD.CITY' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.city"/></td>
-        </tr>
-        <tr>
-            <td>{{'GENERAL.ADDRESS_FIELD.COUNTRY' | translate}}: <input type="text" [(ngModel)]="newEmployeeForm.country"/></td>
+            {{'GENERAL.START_DATE' | translate}}: <input type="date" [(ngModel)]="newEmployeeForm.startDate"/>
         </tr>
     </table>
     <button (click)="createNewEmployee()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>

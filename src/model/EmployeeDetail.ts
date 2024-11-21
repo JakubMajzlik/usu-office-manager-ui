@@ -2,14 +2,8 @@ export interface EmployeeDetail {
     id: number;
     firstName: string;
     lastName: string;
-    address: EmployeeAddress;
-  }
-export interface EmployeeDetailTemp {
-    id: number;
-    firstName: string;
-    lastName: string;
-    address: String;
-    startDate: Date
+    address: string;
+    startDate: string;
   }
 
 export interface EmployeeAddress {

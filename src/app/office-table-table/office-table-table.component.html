@@ -1,16 +1,26 @@
+<h3>Office tables</h3>
 <table>
     <thead>
         <th>{{'GENERAL.NAME' | translate}}</th>
         <th>{{'GENERAL.UTILIZED_AREA' | translate}}</th>
+        <th></th>
     </thead>
     <tbody>
-        @for (officeTable of getTablesForOffice(); track officeTable) {
-            <tr>
-                <td>{{officeTable.name}}</td>
-            </tr>
-            <tr>
-                <td>{{officeTable.utilizedArea}}</td>
-            </tr>
+        @for (table of getTablesForOffice(); track table) {
+        <tr>
+            <td>{{table.name}}</td>
+            <td>{{table.utilizedArea}}</td>
+            @if (!readOnly) {
+            <td>
+                <button (click)="editTable(table)">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
+                <button (click)="deleteTable(table)">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
+            </td>
             }
+        </tr>
+        }
+        <form>
+            Name: <input type="text" />
+            Utilized area: <input type="text" />
+        </form>
     </tbody>
 </table>
