@@ -6,21 +6,20 @@
         <th></th>
     </thead>
     <tbody>
-        @for (table of getTablesForOffice(); track table) {
+        @for (table of office?.tables; track table) {
         <tr>
             <td>{{table.name}}</td>
             <td>{{table.utilizedArea}}</td>
             @if (!readOnly) {
             <td>
-                <button (click)="editTable(table)">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
+                <button (click)="setTableForEditing(table)">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
                 <button (click)="deleteTable(table)">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
             </td>
             }
         </tr>
         }
-        <form>
-            Name: <input type="text" />
-            Utilized area: <input type="text" />
-        </form>
+            Name: <input type="text" [(ngModel)]="selectedTable.name" />
+            Utilized area: <input type="text" [(ngModel)]="selectedTable.utilizedArea"/>
+            <button (click)="createNewTable()">Save table</button>
     </tbody>
 </table>

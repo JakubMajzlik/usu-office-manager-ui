@@ -2,10 +2,10 @@ export interface OfficeDetail {
     id: number;
     name: string;
     area: number;
-    tables: OfficeTable[];
+    tables: OfficeTableDetail[];
 }
 
-export interface OfficeTable {
+export interface OfficeTableDetail {
     id: number;
     name: string;
     utilizedArea: number;
