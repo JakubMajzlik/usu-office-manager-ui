@@ -12,14 +12,13 @@
             <td>{{table.utilizedArea}}</td>
             @if (!readOnly) {
             <td>
-                <button (click)="setTableForEditing(table)">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
                 <button (click)="deleteTable(table)">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
             </td>
             }
         </tr>
         }
-            Name: <input type="text" [(ngModel)]="selectedTable.name" />
-            Utilized area: <input type="text" [(ngModel)]="selectedTable.utilizedArea"/>
-            <button (click)="createNewTable()">Save table</button>
+            {{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="selectedTable.name" />
+            {{'GENERAL.UTILIZED_AREA' | translate}}: <input type="number" [(ngModel)]="selectedTable.utilizedArea"/>
+            <button (click)="createNewTable()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>
     </tbody>
 </table>

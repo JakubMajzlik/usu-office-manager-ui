@@ -35,13 +35,20 @@ export class OfficeTableTableComponent {
   }
 
   setTableForEditing(officeTable: OfficeTableDetail) {
-    this.selectedTable = officeTable
+    this.selectedTable = {
+      id: officeTable.id,
+      name: officeTable.name,
+      utilizedArea: officeTable.utilizedArea
+    }
   }
 
   createNewTable() {
     if (this.office == null) return
 
+    if (this.selectedTable.name.length == 0 || this.selectedTable.utilizedArea <= 0) return
+    
     this.office.tables.push(this.selectedTable)
+
     this.selectedTable = {
       id: 0, name: "", utilizedArea: 0
     }

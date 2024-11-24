@@ -1,5 +1,5 @@
 <div class="page-container">
-    <h2>Create a new office</h2>
+    <h2>{{'GENERAL.NEW_OFFICE_TITLE' | translate}}</h2>
         <table>
             <tr>
                 <td>{{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="office.name"></td>
@@ -11,5 +11,5 @@
             </tr>
         </table>
         <app-office-table-table [office]="office" [readOnly]="false"/>
-        <button  (click)="createOffice()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>
+        <button  (click)="createOffice()">{{'GENERAL.BUTTON.CREATE_OFFICE' | translate}}</button>
 </div>

@@ -7,20 +7,27 @@
         "BUTTON": {
             "EDIT": "Bearbeiten",
             "DELETE": "Löschen",
-            "CREATE": "Erstellen"
+            "CREATE": "Erstellen",
+            "UPDATE": "Aktualisieren",
+            "CREATE_OFFICE": "Ein neues Büro erstellen"
         },
-        "NAME": "Name",
         "FIRST_NAME": "Vorname",
+        "NAME": "Name",
         "LAST_NAME": "Nachname",
         "ADDRESS": "Adresse",
         "ADDRESS_FIELD": {
             "STREET": "Straße",
             "HOUSE_NUMBER": "Hausnummer",
-            "ZIP": "PLZ",
+            "ZIP": "Postleitzahl",
             "CITY": "Stadt",
             "COUNTRY": "Land"
         },
-        "AREA": "Bereich",
-        "CAPACITY": "Kapazität"
+        "UTILIZED_AREA": "Genutzte Fläche",
+        "AREA": "Fläche",
+        "CAPACITY": "Kapazität",
+        "START_DATE": "Startdatum",
+        "EMPLOYEES_TITLE": "Mitarbeiter",
+        "OFFICES_TITLE": "Büros",
+        "NEW_OFFICE_TITLE": "Ein neues Büro erstellen"
     }
 }
