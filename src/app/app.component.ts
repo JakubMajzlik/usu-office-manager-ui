@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EmployeeContainerComponent } from './employee-container/employee-container.component';
 import { OfficeContainerComponent } from './office-container/office-container.component';
 import { EmployeeDetail } from '../model/EmployeeDetail';
 import { EmployeeService } from './employee.service';
-import { OfficeDetail } from '../model/OfficeDetail';
+import { OfficeDetail, OfficeDetailResponse, OfficeTableDetail, OfficeTableDetailResponse } from '../model/OfficeDetail';
 import { OfficeService } from './office.service';
+import { OfficeTableService } from './officeTable.service';
 
 @Component({
   selector: 'app-root',
@@ -26,9 +26,37 @@ export class AppComponent {
 
   offices: OfficeDetail[] = []
 
-  constructor(private employeeService: EmployeeService, private officeService: OfficeService) {
+  constructor(
+    private employeeService: EmployeeService, 
+    private officeService: OfficeService,
+    private officeTableService: OfficeTableService
+  ) {
     this.employeeService.getEmployees().then((response) => {
       this.employees = response.data
+    })
+    
+  }
+
+  private loadOffices() {
+    this.officeService.getAllOffices().then((officesResponse) => {
+
+      const officesResponseData: OfficeDetailResponse[] = officesResponse.data
+
+      const mappedOffices: OfficeDetail[] = []
+      officesResponseData.map((officeRes) => {
+
+        return this.officeTableService.getOfficeTables().then((tablesResponse) => ({
+            id: officeRes.id,
+            name: officeRes.name,
+            area: officeRes.area,
+            tables: (tablesResponse.data as OfficeTableDetailResponse[])
+              .filter((it) => it.officeId === officeRes.id)
+              .map((it) => ({id: it.id, name: it.name, utilizedArea: it.utilizedArea, office: null, employee: null}))
+          
+        }))
+      }).forEach((it) => it.then((itt) => mappedOffices.push(itt)))
+      this.offices = mappedOffices
+
     })
   }
 
@@ -41,9 +69,7 @@ export class AppComponent {
     this.hideAll()
     switch(page) {
       case "offices": {
-        this.officeService.getAllOffices().then((response) => {
-          this.offices = response.data
-        })
+        this.loadOffices()
         this.showOfficesPage = true; 
         break;
       }
@@ -52,7 +78,7 @@ export class AppComponent {
         this.employeeService.getEmployees().then((response) => {
           this.employees = response.data
         })
-        console.log(this.employees)
+
         this.showEmployeesPage = true
       }
     }

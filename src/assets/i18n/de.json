@@ -28,6 +28,9 @@
         "START_DATE": "Startdatum",
         "EMPLOYEES_TITLE": "Mitarbeiter",
         "OFFICES_TITLE": "Büros",
-        "NEW_OFFICE_TITLE": "Ein neues Büro erstellen"
+        "NEW_OFFICE_TITLE": "Ein neues Büro erstellen",
+        "TABLE": "Tisch",
+        "NOT_ASSIGNED": "Nicht zugewiesen",
+        "ASSIGN_TABLE": "Tisch zuweisen"
     }
 }

@@ -12,11 +12,11 @@ export class OfficeService {
   constructor() { }
 
   createOffice(officeDetail: OfficeDetail) {
-    return axios.post(`${API_URL}/offices`, officeDetail)
+    return axios.post(`${API_URL}/offices/`, officeDetail)
   }
 
   updateOffice(officeDetail: OfficeDetail) {
-    axios.put(`${API_URL}/offices/${officeDetail.id}`)
+    axios.put(`${API_URL}/offices/${officeDetail.id}`, officeDetail)
   }
 
   deleteOffice(officeDetail: OfficeDetail) {

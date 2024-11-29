@@ -38,7 +38,8 @@ export class EmployeeCreateFormComponent {
       firstName: this.newEmployeeForm.firstName,
       lastName: this.newEmployeeForm.lastName,
       address: this.newEmployeeForm.address,
-      startDate: this.newEmployeeForm.startDate.toString()
+      startDate: this.newEmployeeForm.startDate.toString(),
+      officeTableId: null
     };
     this.employeeService.createNewEmployee(employee).then((_) => {
        this.allEmployees.push(employee)

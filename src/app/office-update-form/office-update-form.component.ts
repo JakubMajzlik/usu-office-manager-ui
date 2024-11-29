@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { OfficeDetail } from '../../model/OfficeDetail';
+import { OfficeDetail, OfficeTableDetail } from '../../model/OfficeDetail';
 import { TranslateModule } from '@ngx-translate/core';
 import { OfficeTableTableComponent } from "../office-table-table/office-table-table.component";
 import { FormsModule } from '@angular/forms';

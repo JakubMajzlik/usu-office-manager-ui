@@ -13,7 +13,7 @@ import { OfficeTableTableComponent } from '../office-table-table/office-table-ta
 })
 export class OfficeDetailsComponent {
 
-  constructor(private employeeService: OfficeService) {}
+  constructor(private officeService: OfficeService) {}
 
   @Input() offices: OfficeDetail[] = []
   
@@ -21,11 +21,8 @@ export class OfficeDetailsComponent {
 
   @Output() updateOfficeEvent = new EventEmitter<OfficeDetail>()
 
-  setEmployee(office: OfficeDetail) {
-    this.office = office;
-  }
-
   updateOffice() {
+    console.log(this.office)
     if (this.office != null) {
       this.updateOfficeEvent.emit(this.office)
     }
@@ -33,7 +30,7 @@ export class OfficeDetailsComponent {
 
   deleteOffice() {
     if (this.office != null) {
-      this.employeeService.deleteOffice(this.office).then(_ => {
+      this.officeService.deleteOffice(this.office).then(_ => {
         const index = this.offices.indexOf(this.office!)
         this.offices.splice(index, 1)
       })

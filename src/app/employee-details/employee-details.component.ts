@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EmployeeDetail } from '../../model/EmployeeDetail';
 import { EmployeeService } from '../employee.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { OfficeTableDetail } from '../../model/OfficeDetail';
+import { OfficeTableService } from '../officeTable.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -12,7 +14,10 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class EmployeeDetailsComponent {
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private officeTableService: OfficeTableService
+  ) { }
 
   @Input() allEmployees: EmployeeDetail[] = []
 
@@ -21,8 +26,10 @@ export class EmployeeDetailsComponent {
 
   @Output() updateEmployeeEvent = new EventEmitter<EmployeeDetail>()
 
+  @Input() table: OfficeTableDetail | null = null
+
   setEmployee(employee: EmployeeDetail) {
-    this.employee = employee;
+    this.employee = employee;  
   }
 
   updateEmployee() {

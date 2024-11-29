@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { OfficeDetail } from '../../model/OfficeDetail';
 import { OfficeService } from '../office.service';
@@ -14,8 +14,9 @@ import { OfficeTableTableComponent } from '../office-table-table/office-table-ta
 })
 export class OfficeCreateFormComponent {
 
+  @Input() allOffices: OfficeDetail[] = []
 
-  office: OfficeDetail = {
+  officeToCreate: OfficeDetail = {
     id: 0,
     name: "",
     area: 0,
@@ -25,7 +26,15 @@ export class OfficeCreateFormComponent {
   constructor(private officeService: OfficeService) { }
 
   createOffice() {
-    this.officeService.createOffice(this.office)
+    const newOffice: OfficeDetail = {
+      id: 0,
+      area: this.officeToCreate.area,
+      name: this.officeToCreate.name,
+      tables: this.officeToCreate.tables
+    }
+    this.officeService.createOffice(this.officeToCreate).then((_) => {
+      this.allOffices.push(newOffice)
+    })
   }
 
 }

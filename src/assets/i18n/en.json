@@ -28,6 +28,9 @@
         "START_DATE": "Start date",
         "EMPLOYEES_TITLE": "Employees",
         "OFFICES_TITLE": "Offices",
-        "NEW_OFFICE_TITLE": "Create a new office"
+        "NEW_OFFICE_TITLE": "Create a new office",
+        "TABLE": "Table",
+        "NOT_ASSIGNED": "Not assigned",
+        "ASSIGN_TABLE": "Assign to table"
     }
 }

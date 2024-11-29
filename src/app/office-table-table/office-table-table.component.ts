@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { OfficeDetail, OfficeTableDetail } from '../../model/OfficeDetail';
 import { FormsModule } from '@angular/forms';
+import { OfficeTableService } from '../officeTable.service';
 
 
 @Component({
@@ -18,8 +19,10 @@ export class OfficeTableTableComponent {
 
   @Input() readOnly: Boolean = true
 
+  constructor(private officeTableService: OfficeTableService) {}
+
   selectedTable: OfficeTableDetail = {
-    id: 0, name: "", utilizedArea: 0
+    id: 0, name: "", utilizedArea: 0, employee: null, office: null
   }
 
   getTablesForOffice(): OfficeTableDetail[] {
@@ -38,7 +41,9 @@ export class OfficeTableTableComponent {
     this.selectedTable = {
       id: officeTable.id,
       name: officeTable.name,
-      utilizedArea: officeTable.utilizedArea
+      utilizedArea: officeTable.utilizedArea,
+      employee: officeTable.employee,
+      office: this.office
     }
   }
 
@@ -46,11 +51,13 @@ export class OfficeTableTableComponent {
     if (this.office == null) return
 
     if (this.selectedTable.name.length == 0 || this.selectedTable.utilizedArea <= 0) return
+    this.selectedTable.office = this.office
+
+    this.officeTableService.createOfficeTable(this.selectedTable)
     
     this.office.tables.push(this.selectedTable)
-
     this.selectedTable = {
-      id: 0, name: "", utilizedArea: 0
+      id: 0, name: "", utilizedArea: 0, employee: null, office: null
     }
   }
 

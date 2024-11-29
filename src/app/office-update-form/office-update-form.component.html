@@ -1,17 +1,23 @@
 <div class="page-container">
     <h2>Update of office</h2>
-        <table>
-            <tr>
-                <td>{{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="office!.name"></td>
-            </tr>
-            <tr>
-                <td>
-                    {{'GENERAL.AREA' | translate}}: <input type="text" [(ngModel)]="office!.area" />
-                </td>
-            </tr>
-            <tr>
-                <app-office-table-table [office]="office" [readOnly]="false"/>
-            </tr>
-        </table>
-        <button (click)="updateOffice()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
+    <table>
+        <tr>
+            <td>
+                {{'GENERAL.NAME' | translate}}:
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="office!.name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{'GENERAL.AREA' | translate}}:
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="office!.area" />
+            </td>
+        </tr>
+    </table>
+    <app-office-table-table [office]="office" [readOnly]="false" />
+    <button (click)="updateOffice()">{{'GENERAL.BUTTON.UPDATE' | translate}}</button>
 </div>

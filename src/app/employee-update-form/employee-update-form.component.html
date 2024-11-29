@@ -1,16 +1,40 @@
 <div class="page-container">
     <table>
         <tr>
-            <td>{{'GENERAL.FIRST_NAME' | translate}}: <input type="text" minlength="1" [(ngModel)]="employee!.firstName"></td>
-        </tr>
-        <tr>
             <td>
-                {{'GENERAL.LAST_NAME' | translate}}: <input type="text" [(ngModel)]="employee!.lastName" />
+                {{'GENERAL.FIRST_NAME' | translate}}: 
+            </td>
+            <td>
+                <input type="text" minlength="1" [(ngModel)]="employee!.firstName">
             </td>
         </tr>
         <tr>
-            <td>{{'GENERAL.ADDRESS' | translate}}: <input type="text"
-                    [(ngModel)]="employee!.address" /></td>
+            <td>
+                {{'GENERAL.LAST_NAME' | translate}}: 
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="employee!.lastName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{'GENERAL.ADDRESS' | translate}}: 
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="employee!.address" />
+            </td>
+        </tr>
+        <tr>
+            <td>{{'GENERAL.ASSIGN_TABLE' | translate}}
+            </td>
+            <td>
+                <select [(ngModel)]="selectedTable">
+                    <option [ngValue]="null">---</option>
+                    @for (table of tables; track table) {
+                    <option [ngValue]="table">{{table.name}}</option>
+                    }
+                </select>
+            </td>
         </tr>
     </table>
     <input type="hidden" [ngModel]="employee?.id" />

@@ -5,6 +5,8 @@ import { EmployeeDetailsComponent } from '../employee-details/employee-details.c
 import { EmployeeCreateFormComponent } from '../employee-create-form/employee-create-form.component';
 import { EmployeeUpdateFormComponent } from '../employee-update-form/employee-update-form.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { OfficeTableDetail } from '../../model/OfficeDetail';
+import { OfficeTableService } from '../officeTable.service';
 
 @Component({
   selector: 'app-employee-container',
@@ -22,7 +24,13 @@ export class EmployeeContainerComponent {
 
   selectedEmployee: EmployeeDetail | null = null;
 
+  selectedEmployeeTable: OfficeTableDetail | null = null;
+
+  tables: OfficeTableDetail[] = []
+
   @Input() employees: EmployeeDetail[] = []
+
+  constructor(private officeTableService: OfficeTableService) { }
 
   private hideAll() {
     this.showDetail = false
@@ -34,6 +42,13 @@ export class EmployeeContainerComponent {
     this.hideAll()
     this.selectedEmployee = employee
     this.showDetail = true
+    if (employee.officeTableId != null) {
+      this.officeTableService.getOfficeTable(employee.officeTableId).then((response) => {
+        this.selectedEmployeeTable = response.data
+      })
+    } else {
+      this.selectedEmployeeTable = null
+    }
   }
 
   showCreateEmployeeForm() {
@@ -44,6 +59,9 @@ export class EmployeeContainerComponent {
   showUpdateEmployeeForm() {
     this.hideAll()
     this.showEditForm = true
+    this.officeTableService.getOfficeTables().then((response) => {
+      this.tables = (response.data as OfficeTableDetail[]).filter((table) => table.employee == null || table.employee.id === this.selectedEmployee?.id)
+    })
   }
 
 }

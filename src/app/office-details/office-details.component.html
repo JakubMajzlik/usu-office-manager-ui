@@ -3,15 +3,23 @@
     <button (click)="deleteOffice()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
-            <td>{{'GENERAL.NAME' | translate}}: {{office?.name}}</td>
+            <td>
+                {{'GENERAL.NAME' | translate}}:
+            </td>
+            <td>
+                {{office?.name}}
+            </td>
         </tr>
         <tr>
             <td>
-                {{'GENERAL.AREA' | translate}}: {{office?.area}}
+                {{'GENERAL.AREA' | translate}}:
+            </td>
+            <td>
+                {{office?.area}}
             </td>
         </tr>
 
     </table>
-    <app-office-table-table [office]="office" [readOnly]="true"/>
+    <app-office-table-table [office]="office" [readOnly]="true" />
     <button (click)="updateOffice()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
 </div>

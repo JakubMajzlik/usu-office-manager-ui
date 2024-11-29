@@ -1,4 +1,4 @@
-<h1>{{'GENERAL.EMPLOYEES_TITLE' | translate}}</h1>
+<h1 class="page-title">{{'GENERAL.EMPLOYEES_TITLE' | translate}}</h1>
 <div class="page-sub-container">
     <div class="left-container  border-right">
         <button class="new-employee-button" (click)="showCreateEmployeeForm()">+</button>
@@ -7,7 +7,7 @@
 
     <div class="right-container">
     @if (showDetail) {
-    <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()" [allEmployees]="employees"/>
+    <app-employee-details [employee]="selectedEmployee" (updateEmployeeEvent)="showUpdateEmployeeForm()" [allEmployees]="employees" [table]="selectedEmployeeTable"/>
     }
 
     @if (showCreateForm) {
@@ -16,7 +16,7 @@
 
 
     @if (showEditForm) {
-    <app-employee-update-form [employee]="selectedEmployee" />
+    <app-employee-update-form [employee]="selectedEmployee" [tables]="tables" [selectedTable]="selectedEmployeeTable"/>
     }
     </div>
 </div>

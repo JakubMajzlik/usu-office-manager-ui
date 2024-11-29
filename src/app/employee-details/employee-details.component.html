@@ -3,20 +3,45 @@
     <button (click)="deleteEmployee()">{{'GENERAL.BUTTON.DELETE' | translate}}</button>
     <table>
         <tr>
-            <td>{{'GENERAL.FIRST_NAME' | translate}}: {{employee?.firstName}}</td>
-        </tr>
-        <tr>
             <td>
-                {{'GENERAL.LAST_NAME' | translate}}: {{employee?.lastName}}
+                {{'GENERAL.FIRST_NAME' | translate}}: 
+            </td>
+            <td>
+                {{employee?.firstName}}
             </td>
         </tr>
         <tr>
-            <td>{{'GENERAL.ADDRESS' | translate}}: {{employee?.address}}</td>
+            <td>
+                {{'GENERAL.LAST_NAME' | translate}}: 
+            </td>
+            <td>
+                {{employee?.lastName}}
+            </td>
         </tr>
         <tr>
-            <td>{{'GENERAL.START_DATE' | translate}}: {{employee?.startDate}}</td>
+            <td>
+                {{'GENERAL.ADDRESS' | translate}}: 
+            </td>
+            <td>
+                {{employee?.address}}
+            </td>
         </tr>
-
+        <tr>
+            <td>
+                {{'GENERAL.START_DATE' | translate}}: 
+            </td>
+            <td>
+                {{employee?.startDate}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{'GENERAL.TABLE' | translate}}: 
+            </td>
+            <td>
+                {{table?.name ?? 'GENERAL.NOT_ASSIGNED' | translate}}
+            </td>
+        </tr>
     </table>
     <button (click)="updateEmployee()">{{'GENERAL.BUTTON.EDIT' | translate}}</button>
 </div>

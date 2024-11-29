@@ -2,14 +2,22 @@
     <h2>{{'GENERAL.NEW_OFFICE_TITLE' | translate}}</h2>
         <table>
             <tr>
-                <td>{{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="office.name"></td>
+                <td>
+                    {{'GENERAL.NAME' | translate}}: 
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="officeToCreate.name">
+                </td>
             </tr>
             <tr>
                 <td>
-                    {{'GENERAL.AREA' | translate}}: <input type="text" [(ngModel)]="office.area"/>
+                    {{'GENERAL.AREA' | translate}}: 
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="officeToCreate.area"/>
                 </td>
             </tr>
         </table>
-        <app-office-table-table [office]="office" [readOnly]="false"/>
+        <app-office-table-table [office]="officeToCreate" [readOnly]="false"/>
         <button  (click)="createOffice()">{{'GENERAL.BUTTON.CREATE_OFFICE' | translate}}</button>
 </div>

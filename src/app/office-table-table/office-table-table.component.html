@@ -17,8 +17,10 @@
             }
         </tr>
         }
+        @if (!readOnly) {
             {{'GENERAL.NAME' | translate}}: <input type="text" [(ngModel)]="selectedTable.name" />
             {{'GENERAL.UTILIZED_AREA' | translate}}: <input type="number" [(ngModel)]="selectedTable.utilizedArea"/>
             <button (click)="createNewTable()">{{'GENERAL.BUTTON.CREATE' | translate}}</button>
+        }
     </tbody>
 </table>

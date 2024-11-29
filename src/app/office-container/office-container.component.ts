@@ -30,9 +30,9 @@ export class OfficeContainerComponent {
     this.showEditForm = false
   }
 
-  showOfficeDetails(employee: OfficeDetail) {
+  showOfficeDetails(office: OfficeDetail) {
     this.hideAll()
-    this.selectedOffice = employee
+    this.selectedOffice = office
     this.showDetail = true
   }
 
