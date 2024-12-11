@@ -31,10 +31,7 @@ export class AppComponent {
     private officeService: OfficeService,
     private officeTableService: OfficeTableService
   ) {
-    this.employeeService.getEmployees().then((response) => {
-      this.employees = response.data
-    })
-    
+    this.loadEmployees()
   }
 
   private loadOffices() {
@@ -60,6 +57,12 @@ export class AppComponent {
     })
   }
 
+  private loadEmployees() {
+    this.employeeService.getEmployees().then((response) => {
+      this.employees = response.data
+    })
+  }
+
   hideAll() {
     this.showEmployeesPage = false
     this.showOfficesPage = false
@@ -75,9 +78,7 @@ export class AppComponent {
       }
       case "employees": 
       default: {
-        this.employeeService.getEmployees().then((response) => {
-          this.employees = response.data
-        })
+        this.loadEmployees()
 
         this.showEmployeesPage = true
       }

@@ -59,8 +59,9 @@ export class EmployeeContainerComponent {
   showUpdateEmployeeForm() {
     this.hideAll()
     this.showEditForm = true
+    
     this.officeTableService.getOfficeTables().then((response) => {
-      this.tables = (response.data as OfficeTableDetail[]).filter((table) => table.employee == null || table.employee.id === this.selectedEmployee?.id)
+      this.tables = (response.data as OfficeTableDetail[])
     })
   }
 

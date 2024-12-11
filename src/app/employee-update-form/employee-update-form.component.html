@@ -31,7 +31,9 @@
                 <select [(ngModel)]="selectedTable">
                     <option [ngValue]="null">---</option>
                     @for (table of tables; track table) {
-                    <option [ngValue]="table">{{table.name}}</option>
+                        @if (table.employee?.id == null || table.id == employee?.id ) {
+                            <option [ngValue]="table">{{table.name}}</option>
+                        }
                     }
                 </select>
             </td>

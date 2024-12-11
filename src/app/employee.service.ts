@@ -4,53 +4,6 @@ import axios from 'axios';
 import { API_URL } from './api';
 import { OfficeTableDetail } from '../model/OfficeDetail';
 
-const mockedJson = `
-[
-  { 
-      "firstName": "Jakub",
-      "lastName": "Majzlik",
-      "address": {
-        "number": 20,
-        "street": "Street A",
-        "city": "City A",
-        "zip": "123 23",
-        "country": "Country A"
-      }
-  },
-  { 
-      "firstName": "Stanislav",
-      "lastName": "Petrek",
-      "address": {
-        "number": 30,
-        "street": "Street B",
-        "city": "City B",
-        "zip": "456 78",
-        "country": "Country B"
-      }
-  },
-  { 
-      "firstName": "Employee",
-      "lastName": "Number3",
-      "address": {
-        "number": 30,
-        "street": "Street B",
-        "city": "City B",
-        "zip": "456 78",
-        "country": "Country B"
-      }
-  },
-  { 
-      "firstName": "Employee",
-      "lastName": "Number4",
-      "address": {
-        "number": 30,
-        "street": "Street B",
-        "city": "City B",
-        "zip": "456 78",
-        "country": "Country B"
-      }
-  }
-]`;
 
 @Injectable({
   providedIn: 'root'
